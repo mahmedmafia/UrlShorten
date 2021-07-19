@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import MakeShortPage from "./Pages/makeShort/makeShort";
+import RedirectPage from "./Pages/redirectPage";
+import NavBar from "./components/NavBar/navbar";
+import UrlsList from './Pages/urlsList/urlsList';
+import { BrowserRouter as Router, Route, Switch, Link ,Redirect} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+     <NavBar></NavBar>
+        <Switch>
+          <Route path="/"  exact>
+          <Redirect to="/shorten" />
+          </Route>
+          <Route path="/shorten">
+            <MakeShortPage></MakeShortPage>
+          </Route>
+          <Route path="/shortlinks">
+            <UrlsList></UrlsList>
+          </Route>
+          <Route path="/:slug" >
+            <RedirectPage></RedirectPage>
+          </Route>
+         
+          
+        </Switch>
+      
+    </Router>
   );
 }
 

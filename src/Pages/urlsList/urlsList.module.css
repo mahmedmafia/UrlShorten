@@ -1,0 +1,17 @@
+table{
+    width:80%;
+    text-align: center;
+    margin:4rem auto;
+}
+th{
+    font-size: 1.5rem;
+}
+td{
+    font-size:1.1rem;
+}
+.spanned{
+    background-color: azure;
+    border:.5px solid red;
+    height:5rem;
+    margin-left:3rem;
+}
