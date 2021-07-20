@@ -34,7 +34,7 @@ export default function UrlsList() {
           </thead>
         <tbody>
           {urlsList}
-          {!urls&&<td className={classes.spanned}  colSpan="3" rowSpan="3">No ShortLinks Found</td>}
+          {urls.length==0&&<td className={classes.spanned}  colSpan="3" rowSpan="3">No ShortLinks Found</td>}
           </tbody>
         </table>
       }
